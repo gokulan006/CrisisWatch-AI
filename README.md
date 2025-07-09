@@ -91,7 +91,7 @@ CrisisWatch AI with minimal changes, this system can be extented in the followin
 
 ## DEMO
 Due to cost compute constraints, we were unable to deploy the complete version of the application that includes the full post analysis pipeline(post extraction, model inference, and geolocation).
-However, we have deployed the **interactive dashboard**, which showcases visualizations based on posts ( 2026-07-01 to 2026-07-07 ) analysed and stored in the database.
+However, we have deployed the **interactive dashboard**, which showcases visualizations based on posts (2026-07-01 to 2026-07-04) analysed and stored in the database.
 
 Explore the deployed dashboard here
 
@@ -149,8 +149,7 @@ Explore the deployed dashboard here
 ├── risk_analysis.csv           # Risk CLassification Dataset
 ├── requirements.txt            # Dependencies
 ├── templates/index.html        # HTML code for Home Page
-├── templates/analyze.html      # HTML code for Analyze Page
-├── static/styles.css           # Styling CSS File for Home Page and Analyze Page
+├── static/styles.css           # Styling CSS File for Home Page
 ├── assets/style.css            # Styling CSS File for Dashboard Page
 ├── risk_model_package/         # Risk Classification model package
 ├── HackOrbit.pptx              # Project Presentation 
