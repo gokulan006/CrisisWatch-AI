@@ -5,9 +5,10 @@
 
 The main aim of this project is to support individuals experiencing suicidal thoughts, mental health issues, or substance use challenges and try to seek help on social medias. Using advanced natural language processing and machine learning techniques, the system analysis posts in real time and provides actionable insights to the mental health services and professionals. This enables mental health organizations to launch targeted awareness campaigns and provide timely support and intervention to those peoples.
 
+ 
 ## OVERVIEW
 
-CrisisWatch AI is an crisis monitoring system designed to detect and analyze crisis-related content on Reddit. By collecting and processing posts from subreddits focused on mental health, suicide thoughts, and substance use, the system performs risk classification, sentimental analysis, user behavior tracking, and geographic mapping.
+CrisisWatch AI is an crisis monitoring system designed to detect and analyze crisis-related content on Reddit. By collecting and processing posts from subreddits focused on mental health, suicide thoughts, and substance use, the system performs risk classification, sentimental analysis, user behavior tracking, and geolocation mapping.
 
 The data is visualized through an interactive dashboard that enables mental health professionals and researchers to monitor trends, identify at-risk user, and make data-driven decisions for outreach and support. The solution is modular, scalable, and focused on creating real-world impact in the field of mental health using Artificial Intelligence.
 
@@ -16,13 +17,13 @@ The data is visualized through an interactive dashboard that enables mental heal
 
 ![image](https://github.com/user-attachments/assets/bc842a3e-def2-4511-8048-486610b4d73a)
 
-                               
+
 ## FEATURES
 
 - Real-time Reddit Monitoring: Fetches posts from mental health, suicide prevention, and substance abuse subreddits with custom lexicon keyword filtering
 - Risk Classification: Uses DistilBERT Bi-LSTM CNN model to classify posts into High, Medium, or Low risk categories  
 - Sentiment Analysis: Analyzes sentiment of posts (Positive, Negative, Neutral)  
-- Geographic Mapping: Extracts and maps locations mentioned in posts  
+- Geolocation Mapping: Extracts locations and maps coordinates from the posts  
 - User Behavior Tracking: Monitor each users to identify the patterns of at-risk users
 - Interactive Dashboard: Visualizes data through charts, graphs, and heatmaps  
 
