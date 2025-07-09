@@ -25,13 +25,19 @@ warnings.filterwarnings('ignore')
 
 load_dotenv()
 
+client_id=os.getenv('CLIENT_ID')
+client_secret=os.getenv('CLIENT_SECRET')
+username=os.getenv('USER_NAME')
+password=os.getenv('PASSWORD')
+user_agent=os.getenv('USER_AGENT')
 
-reddit = praw.Reddit(
-    client_id="9dF27Taw0o6NmQzH91s8RA",
-    client_secret="Dit-duJ3msPmvHUVkJc3GyXlSNO-wg",
-    username="Realistic_Mixture138",
-    password="gokulan06",   
-    user_agent="script:reddit.sentiment.analysis:v1.0 (by u/Realistic_Mixture138)"
+
+reddit=praw.Reddit(
+    client_id=client_id,
+    client_secret=client_secret,
+    user_agent=user_agent,
+    username=username,
+    password=password
 )
 
 
