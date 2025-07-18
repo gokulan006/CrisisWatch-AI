@@ -162,8 +162,7 @@ Explore the deployed dashboard here
 
 ## Contributors
 
-- Gokulan M – Model Training, Backend Development
-- Sri Jaai Meenakshi M – Dashboard, Frontend Development
+- [Gokulan M](https://github.com/gokulan006) – Model Training, Backend Development, Dashboard, Frontend Development
  
 ## Acknowledgments
 
