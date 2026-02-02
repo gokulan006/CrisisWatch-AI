@@ -95,7 +95,7 @@ However, we have deployed the **interactive dashboard**, which showcases visuali
 
 Explore the deployed dashboard here
 
-**Live Demo:** [CrisisWatchAI](https://crisiswatch-api-419808785746.asia-south1.run.app/)
+**Live Demo:** [CrisisWatchAI](https://crisis-watch-demo-production.up.railway.app/)
 
 ## Prerequisites
 1. **Create a Reddit API Key**:
