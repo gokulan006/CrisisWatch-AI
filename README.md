@@ -5,8 +5,7 @@
 
 The main aim of this project is to support individuals experiencing suicidal thoughts, mental health issues, or substance use challenges and try to seek help on social medias. Using advanced natural language processing and machine learning techniques, the system analysis posts in real time and provides actionable insights to the mental health services and professionals. This enables mental health organizations to launch targeted awareness campaigns and provide timely support and intervention to those peoples.
 
-## DEMO LINK
-demo:https://crisis-watch-demo-production.up.railway.app/
+ 
  
 ## OVERVIEW
 
