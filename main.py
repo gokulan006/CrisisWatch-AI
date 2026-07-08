@@ -3,8 +3,6 @@ import numpy as np
 import praw
 import re
 import os
-import tensorflow as tf
-from tensorflow import keras
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from flask import Flask, request, jsonify, render_template
 from nltk.corpus import stopwords
@@ -20,7 +18,6 @@ from tqdm import tqdm
 tqdm.pandas()
 import warnings
 warnings.filterwarnings('ignore')
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
@@ -100,15 +97,11 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 MODEL_NAME = "gokulan006/distilbert-reddit-mental-health-risk-classifier"
 
-# Loading the model and tokenizer
-def load_risk_classification_model():
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
-    model.to(device)
-    return tokenizer, model
-
-tokenizer, model=load_risk_classification_model()
-
+ 
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+model.to(device)
+ 
 # Sentiment Analysing Model
 analyser = SentimentIntensityAnalyzer()
 
