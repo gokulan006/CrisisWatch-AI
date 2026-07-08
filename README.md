@@ -135,36 +135,8 @@ A **DistilBERT-based transformer model** was fine-tuned to classify Reddit posts
 One of the major challenges in behavioral health monitoring is accurately identifying a user's location from unstructured Reddit posts.
  
 1. **spaCy Named Entity Recognition (NER)** identifies posts containing potential location entities.
-3. **Nominatim** converts inferred locations into latitude and longitude coordinates.
+2. **Nominatim** converts inferred locations into latitude and longitude coordinates.
 
-This significantly reduces the number of LLM API calls while improving location inference accuracy.
-
-
-## TECHNOLOGIES USED
-
-### Backend
-
-- Flask  
-- SQLAlchemy  
-- PRAW (Python Reddit API Wrapper)  
-- TensorFlow/Keras  
-- Transformers (DistilBERT)  
-- VADER Sentiment Analysis  
-- spaCy (NER)  
-- Geopy (Geocoding)  
-
-### Frontend
-
-- Dash (Dashboard framework)  
-- Plotly (Visualizations)  
-- Folium (Geospatial mapping)  
-- WordCloud
-- HTML
-- Tailwind CSS
-
-### Database
-
-- SQLite
 
 ## DEMO
 Due to cost compute constraints, we were unable to deploy the complete version of the application that includes the full post analysis pipeline(post extraction, model inference, and geolocation).
@@ -228,7 +200,6 @@ Explore the deployed dashboard here
 ├── templates/index.html        # HTML code for Home Page
 ├── static/styles.css           # Styling CSS File for Home Page
 ├── assets/style.css            # Styling CSS File for Dashboard Page
-├── risk_model_package/         # Risk Classification model package
 └── .env                        # Environment variables     
 ```
 
