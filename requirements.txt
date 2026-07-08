@@ -1,6 +1,4 @@
 praw
-tensorflow
-tf-keras
 vaderSentiment
 nltk
 spacy
