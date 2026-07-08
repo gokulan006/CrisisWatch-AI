@@ -22,7 +22,7 @@ The data is visualized through an interactive dashboard that enables mental heal
 ## FEATURES
 
 - Real-time Reddit Monitoring: Fetches posts from mental health, suicide prevention, and substance abuse subreddits with custom lexicon keyword filtering
-- Risk Classification: Uses DistilBERT Bi-LSTM CNN model to classify posts into High, Medium, or Low risk categories  
+- Risk Classification: Uses DistilBERT model to classify posts into High, Medium, or Low risk categories  
 - Sentiment Analysis: Analyzes sentiment of posts (Positive, Negative, Neutral)  
 - Geolocation Mapping: Extracts locations and maps coordinates from the posts  
 - User Behavior Tracking: Monitor each users to identify the patterns of at-risk users
@@ -33,10 +33,7 @@ The data is visualized through an interactive dashboard that enables mental heal
  - Sentiment Analysis:
     - VADER Sentimental Analysis Model
  - Risk Classification:
-    - Fine Tuned DistilBERT Bi-LSTM CNN model trained on a modified dataset from [Kaggle Dataset](https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health) for classifying the risk levels with an accuracy of 84% on validation dataset.
-    - Model Structure
-    - 
-       ![image](https://github.com/user-attachments/assets/fe8a2a0b-55ab-4cbf-9cfb-cd347948abbc)
+    - Fine Tuned DistilBERT model trained on a modified dataset from [Kaggle Dataset](https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health) for classifying the risk levels with an accuracy of 85% on validation dataset.
       
  - Location Extraction:
     - spaCy Named Entity Recognition model
