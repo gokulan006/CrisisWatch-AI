@@ -144,7 +144,7 @@ However, we have deployed the **interactive dashboard**, which showcases visuali
 
 Explore the deployed dashboard here
 
-**Live Demo:** [CrisisWatchAI](https://crisis-watch-demo-gqib.onrender.com/))
+**Live Demo:** [CrisisWatchAI](https://crisis-watch-demo-gqib.onrender.com/)
 
 ## Prerequisites
 1. **Create a Reddit API Key**:
