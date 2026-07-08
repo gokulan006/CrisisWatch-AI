@@ -1,3 +1,0 @@
-Classes: ['High-Rsik', 'Low-Risk', 'Mid-Risk']
-Max sequence length: 128
-Last validation accuracy: 0.8312
