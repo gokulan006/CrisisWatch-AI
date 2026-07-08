@@ -15,13 +15,14 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from dash_app import create_dashboard
 from dotenv import load_dotenv
-from pathlib import Path
-from transformers import DistilBertTokenizerFast, TFDistilBertModel
 import time
 from tqdm import tqdm
 tqdm.pandas()
 import warnings
 warnings.filterwarnings('ignore')
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import torch
 
 load_dotenv()
 
@@ -95,27 +96,15 @@ geolocator= Nominatim(user_agent='crisis_detector')
 
 # Setting up Risk Classifier Model
 risk_labels= ['High Risk', 'Low Risk', 'Moderate Risk']   
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+MODEL_NAME = "gokulan006/distilbert-reddit-mental-health-risk-classifier"
 
 # Loading the model and tokenizer
 def load_risk_classification_model():
-    base_dir=Path('risk_model_package')
-
-    tokenizer_dir=base_dir / 'tokenizer'
-    
-    tokenizer = DistilBertTokenizerFast(
-        vocab_file=str(tokenizer_dir/'vocab.txt'),
-        tokenizer_config_file=str(tokenizer_dir/'tokenizer_config.json')
-    )
-
-    model=tf.keras.models.load_model(
-        str(base_dir/'model'),
-        custom_objects={
-            "TFDistilBertModel": TFDistilBertModel,
-            "Attention": tf.keras.layers.Attention
-        }
-    )
-
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+    model.to(device)
     return tokenizer, model
 
 tokenizer, model=load_risk_classification_model()
@@ -289,19 +278,27 @@ def sentiment_scores(sentence):
 def predict_risk_level(text):
     inputs = tokenizer(
         text,
-        max_length=128,
-        padding="max_length",
+        return_tensors="pt",
         truncation=True,
-        return_tensors="tf"
+        padding=True,
+        max_length=128
     )
-    
-    probs = model.predict({
-        "input_ids": inputs["input_ids"],
-        "attention_mask": inputs["attention_mask"]
-    })
-    
-    predicted_class = np.argmax(probs, axis=-1)[0]
 
+    inputs = {k: v.to(device) for k, v in inputs.items()}
+
+    with torch.no_grad():
+        outputs = model(**inputs)
+
+    probabilities = torch.softmax(
+        outputs.logits,
+        dim=1
+    )
+
+    predicted_class = torch.argmax(
+        probabilities,
+        dim=1
+    ).item()
+ 
     return risk_labels[predicted_class]
 
 # Function to extract location
